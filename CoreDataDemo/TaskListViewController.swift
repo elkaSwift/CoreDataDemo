@@ -8,18 +8,12 @@
 import UIKit
 import CoreData
 
-enum DataError: Error {
-    case noData
-    case dontSaveData
-    case dontEditData
-    case dontDeleteData
-}
-
 class TaskListViewController: UITableViewController {
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private let cellID = "task"
     private var taskList: [Task] = []
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +110,7 @@ class TaskListViewController: UITableViewController {
               // error
         }
     }
-  
+
     private func delete(at index: Int) {
         let task = Task(context: context)
         context.delete(task)
@@ -148,6 +142,7 @@ extension TaskListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
