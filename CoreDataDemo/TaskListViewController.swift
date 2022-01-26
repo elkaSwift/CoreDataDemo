@@ -8,6 +8,13 @@
 import UIKit
 import CoreData
 
+enum DataError: Error {
+    case noData
+    case dontSaveData
+    case dontEditData
+    case dontDeleteData
+}
+
 class TaskListViewController: UITableViewController {
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -88,7 +95,6 @@ class TaskListViewController: UITableViewController {
         present(alert, animated: true)
     }
     private func save(_ taskName: String) {
-        
         let task = Task(context: context)
         task.name = taskName
         taskList.append(task)
@@ -101,9 +107,28 @@ class TaskListViewController: UITableViewController {
         } catch let error {
             print(error)
         }
+        
+        context.delete(task)
+        do {
+            try context.save()
+        }
+        catch {
+              // error
+        }
     }
-
+  
+    private func delete(at index: Int) {
+        let task = Task(context: context)
+        context.delete(task)
+        do {
+            try context.save()
+        }
+        catch {
+              // error
+        }
+    }
 }
+
 
 extension TaskListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,4 +145,17 @@ extension TaskListViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            delete(at: indexPath.row)
+            taskList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+
+    }
 }
