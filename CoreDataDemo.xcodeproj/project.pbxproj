@@ -12,6 +12,7 @@
 		1C75358E27A1703600FC95F1 /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C75358C27A1703600FC95F1 /* CoreDataDemo.xcdatamodeld */; };
 		1C75359027A1703700FC95F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C75358F27A1703700FC95F1 /* Assets.xcassets */; };
 		1C75359327A1703700FC95F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C75359127A1703700FC95F1 /* LaunchScreen.storyboard */; };
+		1C75359B27A17EDE00FC95F1 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C75359A27A17EDE00FC95F1 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1C75358F27A1703700FC95F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C75359227A1703700FC95F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C75359427A1703700FC95F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C75359A27A17EDE00FC95F1 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				1C75358327A1703600FC95F1 /* AppDelegate.swift */,
 				1C75358727A1703600FC95F1 /* TaskListViewController.swift */,
+				1C75359A27A17EDE00FC95F1 /* TaskViewController.swift */,
 				1C75358F27A1703700FC95F1 /* Assets.xcassets */,
 				1C75359127A1703700FC95F1 /* LaunchScreen.storyboard */,
 				1C75359427A1703700FC95F1 /* Info.plist */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C75358827A1703600FC95F1 /* TaskListViewController.swift in Sources */,
+				1C75359B27A17EDE00FC95F1 /* TaskViewController.swift in Sources */,
 				1C75358E27A1703600FC95F1 /* CoreDataDemo.xcdatamodeld in Sources */,
 				1C75358427A1703600FC95F1 /* AppDelegate.swift in Sources */,
 			);
